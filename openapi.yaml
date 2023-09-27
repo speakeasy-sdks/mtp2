@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: Node Management API
+  description: Create and manage rocket nodes..
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+
+paths:
+  /{rocketNodePath}:
+    post:
+      description: Create node at the specified path.
+      operationId: createNode
+      parameters:
+        - $ref: "#/components/parameters/rocketNode"
+      responses:
+        "201":
+          description: Node created successfully.
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Path of created node.
+        "400":
+          description: Invalid request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+    put:
+      description: Add property to target node.
+      operationId: addProperty
+      parameters:
+        - $ref: "#/components/parameters/rocketNode"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NodeProperty"
+      responses:
+        "200":
+          description: Property added successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nodeName:
+                    type: string
+                  nodeProperties:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/NodeProperty"
+        "400":
+          description: Invalid request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        "404":
+          description: Target node not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+    get:
+      description: Return subtree of target node.
+      operationId: getSubtree
+      parameters:
+        - $ref: "#/components/parameters/rocketNode"
+      responses:
+        "200":
+          description: Subtree retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Return target subtree.
+        "404":
+          description: The node was not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+components:
+  schemas:
+    NodeProperty:
+      type: object 
+      required:
+        - key
+        - value
+      properties:
+        key:
+          type: string
+          description: Property name.
+        value:
+          type: number
+          format: double
+          description: Property value.
+  parameters:
+    rocketNode:
+      name: rocketNodePath
+      in: path
+      description: Target node.
+      required: true
+      schema:
+        type: string
