@@ -9,10 +9,10 @@ s = tmp2.Tmp2()
 
 req = operations.AddPropertyRequest(
     node_property=shared.NodeProperty(
-        key='corrupti',
-        value=5928.45,
+        key='<key>',
+        value=7039.04,
     ),
-    rocket_node_path='distinctio',
+    rocket_node_path='Passenger',
 )
 
 res = s.add_property(req)

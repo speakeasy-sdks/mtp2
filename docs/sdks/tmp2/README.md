@@ -25,10 +25,10 @@ s = tmp2.Tmp2()
 
 req = operations.AddPropertyRequest(
     node_property=shared.NodeProperty(
-        key='corrupti',
-        value=8472.52,
+        key='<key>',
+        value=7039.04,
     ),
-    rocket_node_path='vel',
+    rocket_node_path='Passenger',
 )
 
 res = s.tmp2.add_property(req)
@@ -62,7 +62,7 @@ from tmp2.models import operations
 s = tmp2.Tmp2()
 
 req = operations.CreateNodeRequest(
-    rocket_node_path='error',
+    rocket_node_path='female hertz',
 )
 
 res = s.tmp2.create_node(req)
@@ -96,7 +96,7 @@ from tmp2.models import operations
 s = tmp2.Tmp2()
 
 req = operations.GetSubtreeRequest(
-    rocket_node_path='deserunt',
+    rocket_node_path='holistic',
 )
 
 res = s.tmp2.get_subtree(req)

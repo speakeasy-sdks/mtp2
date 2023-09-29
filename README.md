@@ -7,7 +7,7 @@
 </div>
 
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/mtp2.git
@@ -16,8 +16,6 @@ pip install git+https://github.com/speakeasy-sdks/mtp2.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import tmp2
 from tmp2.models import operations, shared
@@ -26,10 +24,10 @@ s = tmp2.Tmp2()
 
 req = operations.AddPropertyRequest(
     node_property=shared.NodeProperty(
-        key='quibusdam',
-        value=6027.63,
+        key='<key>',
+        value=7039.04,
     ),
-    rocket_node_path='nulla',
+    rocket_node_path='Passenger',
 )
 
 res = s.add_property(req)
@@ -40,9 +38,9 @@ if res.add_property_200_application_json_object is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
-## [Tmp2 SDK](docs/sdks/tmp2/README.md)
+### [Tmp2 SDK](docs/sdks/tmp2/README.md)
 
 * [add_property](docs/sdks/tmp2/README.md#add_property) - Add property to target node.
 * [create_node](docs/sdks/tmp2/README.md#create_node) - Create node at the specified path.
@@ -50,8 +48,6 @@ if res.add_property_200_application_json_object is not None:
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -63,8 +59,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
