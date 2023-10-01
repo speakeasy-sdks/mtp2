@@ -16,6 +16,7 @@ class CreateNode400ApplicationJSON(Exception):
     error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error'), 'exclude': lambda f: f is None }})
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: True }})
     r"""Raw HTTP response; suitable for custom response parsing"""
+    
 
     def __str__(self) -> str:
         return utils.marshal_json(self)
