@@ -35,6 +35,7 @@ res = s.tmp2.add_property(req)
 
 if res.add_property_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.tmp2.create_node(req)
 
 if res.create_node_201_application_json_string is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -103,6 +105,7 @@ res = s.tmp2.get_subtree(req)
 
 if res.get_subtree_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

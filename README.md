@@ -30,10 +30,11 @@ req = operations.AddPropertyRequest(
     rocket_node_path='Passenger',
 )
 
-res = s.add_property(req)
+res = s.tmp2.add_property(req)
 
 if res.add_property_200_application_json_object is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
