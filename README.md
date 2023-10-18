@@ -27,7 +27,7 @@ req = operations.AddPropertyRequest(
         key='<key>',
         value=7039.04,
     ),
-    rocket_node_path='Passenger',
+    rocket_node_path='female',
 )
 
 res = s.tmp2.add_property(req)

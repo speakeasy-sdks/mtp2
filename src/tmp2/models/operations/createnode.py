@@ -6,13 +6,11 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateNodeRequest:
     rocket_node_path: str = dataclasses.field(metadata={'path_param': { 'field_name': 'rocketNodePath', 'style': 'simple', 'explode': False }})
     r"""Target node."""
     
-
 
 
 

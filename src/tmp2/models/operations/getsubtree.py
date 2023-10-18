@@ -6,7 +6,6 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetSubtreeRequest:
     rocket_node_path: str = dataclasses.field(metadata={'path_param': { 'field_name': 'rocketNodePath', 'style': 'simple', 'explode': False }})
@@ -15,12 +14,10 @@ class GetSubtreeRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetSubtree200ApplicationJSON:
     r"""Return target subtree."""
     
-
 
 
 

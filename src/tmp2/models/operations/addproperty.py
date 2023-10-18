@@ -6,8 +6,7 @@ import requests as requests_http
 from ..shared import nodeproperty as shared_nodeproperty
 from dataclasses_json import Undefined, dataclass_json
 from tmp2 import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -20,14 +19,12 @@ class AddPropertyRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AddProperty200ApplicationJSON:
     r"""Property added successfully."""
     node_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nodeName'), 'exclude': lambda f: f is None }})
-    node_properties: Optional[list[shared_nodeproperty.NodeProperty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nodeProperties'), 'exclude': lambda f: f is None }})
+    node_properties: Optional[List[shared_nodeproperty.NodeProperty]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nodeProperties'), 'exclude': lambda f: f is None }})
     
-
 
 
 
