@@ -28,7 +28,7 @@ req = operations.AddPropertyRequest(
         key='<key>',
         value=7039.04,
     ),
-    rocket_node_path='female',
+    rocket_node_path='string',
 )
 
 res = s.tmp2.add_property(req)
@@ -63,7 +63,7 @@ from tmp2.models import operations
 s = tmp2.Tmp2()
 
 req = operations.CreateNodeRequest(
-    rocket_node_path='optimizing',
+    rocket_node_path='string',
 )
 
 res = s.tmp2.create_node(req)
@@ -98,7 +98,7 @@ from tmp2.models import operations
 s = tmp2.Tmp2()
 
 req = operations.GetSubtreeRequest(
-    rocket_node_path='Concrete',
+    rocket_node_path='string',
 )
 
 res = s.tmp2.get_subtree(req)
