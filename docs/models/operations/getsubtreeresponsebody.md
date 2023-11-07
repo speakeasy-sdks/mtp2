@@ -1,4 +1,4 @@
-# GetSubtree200ApplicationJSON
+# GetSubtreeResponseBody
 
 Return target subtree.
 

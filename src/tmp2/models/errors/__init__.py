@@ -3,5 +3,6 @@
 from .addproperty import *
 from .createnode import *
 from .getsubtree import *
-from .sdkerror import SDKError
-__all__ = ["AddProperty400ApplicationJSON","AddProperty404ApplicationJSON","CreateNode400ApplicationJSON","GetSubtree404ApplicationJSON","SDKError"]
+from .sdkerror import *
+
+__all__ = ["AddPropertyResponseBody","AddPropertyResponseResponseBody","CreateNodeResponseBody","GetSubtreeResponseBody","SDKError"]

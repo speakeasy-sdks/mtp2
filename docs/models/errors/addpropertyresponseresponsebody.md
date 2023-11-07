@@ -1,6 +1,6 @@
-# AddProperty400ApplicationJSON
+# AddPropertyResponseResponseBody
 
-Invalid request.
+Target node not found.
 
 
 ## Fields

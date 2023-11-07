@@ -67,20 +67,20 @@ class Tmp2:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.AddProperty200ApplicationJSON])
-                res.add_property_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.AddPropertyResponseBody])
+                res.two_hundred_application_json_object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.AddProperty400ApplicationJSON)
+                out = utils.unmarshal_json(http_res.text, errors.AddPropertyResponseBody)
                 out.raw_response = http_res
                 raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.AddProperty404ApplicationJSON)
+                out = utils.unmarshal_json(http_res.text, errors.AddPropertyResponseResponseBody)
                 out.raw_response = http_res
                 raise out
             else:
@@ -109,12 +109,12 @@ class Tmp2:
         
         if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                res.create_node_201_application_json_string = http_res.content
+                res.res = http_res.content
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.CreateNode400ApplicationJSON)
+                out = utils.unmarshal_json(http_res.text, errors.CreateNodeResponseBody)
                 out.raw_response = http_res
                 raise out
             else:
@@ -143,13 +143,13 @@ class Tmp2:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetSubtree200ApplicationJSON])
-                res.get_subtree_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetSubtreeResponseBody])
+                res.two_hundred_application_json_object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.GetSubtree404ApplicationJSON)
+                out = utils.unmarshal_json(http_res.text, errors.GetSubtreeResponseBody)
                 out.raw_response = http_res
                 raise out
             else:

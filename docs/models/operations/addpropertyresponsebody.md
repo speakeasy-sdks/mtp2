@@ -1,4 +1,4 @@
-# AddProperty200ApplicationJSON
+# AddPropertyResponseBody
 
 Property added successfully.
 

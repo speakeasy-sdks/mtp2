@@ -1,4 +1,4 @@
-# GetSubtree404ApplicationJSON
+# GetSubtreeResponseBody
 
 The node was not found.
 

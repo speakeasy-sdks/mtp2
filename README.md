@@ -30,9 +30,9 @@ req = operations.AddPropertyRequest(
     rocket_node_path='string',
 )
 
-res = s.tmp2.add_property(req)
+res = s.add_property(req)
 
-if res.add_property_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -88,15 +88,15 @@ req = operations.AddPropertyRequest(
 
 res = None
 try:
-    res = s.tmp2.add_property(req)
+    res = s.add_property(req)
 
-except (addProperty_400ApplicationJSON_object) as e:
+except (400_application/json_object) as e:
     print(e) # handle exception
-except (addProperty_404ApplicationJSON_object) as e:
+except (404_application/json_object) as e:
     print(e) # handle exception
 
 
-if res.add_property_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -117,13 +117,12 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import tmp2
 from tmp2.models import operations, shared
 
 s = tmp2.Tmp2(
-    server_idx=0
+    server_idx=0,
 )
 
 req = operations.AddPropertyRequest(
@@ -134,9 +133,9 @@ req = operations.AddPropertyRequest(
     rocket_node_path='string',
 )
 
-res = s.tmp2.add_property(req)
+res = s.add_property(req)
 
-if res.add_property_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -146,13 +145,12 @@ if res.add_property_200_application_json_object is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import tmp2
 from tmp2.models import operations, shared
 
 s = tmp2.Tmp2(
-    server_url="http://localhost:8080"
+    server_url="http://localhost:8080",
 )
 
 req = operations.AddPropertyRequest(
@@ -163,9 +161,9 @@ req = operations.AddPropertyRequest(
     rocket_node_path='string',
 )
 
-res = s.tmp2.add_property(req)
+res = s.add_property(req)
 
-if res.add_property_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -189,8 +187,6 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = tmp2.Tmp2(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

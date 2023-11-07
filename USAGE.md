@@ -15,9 +15,9 @@ req = operations.AddPropertyRequest(
     rocket_node_path='string',
 )
 
-res = s.tmp2.add_property(req)
+res = s.add_property(req)
 
-if res.add_property_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
