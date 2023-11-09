@@ -34,15 +34,14 @@ class Tmp2:
         if client is None:
             client = requests_http.Session()
         
-        security_client = client
-        
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, None, server_url, server_idx, retry_config=retry_config)
        
         
+    
     
     
     
@@ -91,6 +90,7 @@ class Tmp2:
         return res
 
     
+    
     def create_node(self, request: operations.CreateNodeRequest) -> operations.CreateNodeResponse:
         r"""Create node at the specified path."""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -124,6 +124,7 @@ class Tmp2:
 
         return res
 
+    
     
     def get_subtree(self, request: operations.GetSubtreeRequest) -> operations.GetSubtreeResponse:
         r"""Return subtree of target node."""

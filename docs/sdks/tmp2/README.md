@@ -48,7 +48,13 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.AddPropertyResponse](../../models/operations/addpropertyresponse.md)**
+### Errors
 
+| Error Object                           | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| errors.AddPropertyResponseBody         | 400                                    | application/json                       |
+| errors.AddPropertyResponseResponseBody | 404                                    | application/json                       |
+| errors.SDKError                        | 400-600                                | */*                                    |
 
 ## create_node
 
@@ -83,7 +89,12 @@ if res.res is not None:
 ### Response
 
 **[operations.CreateNodeResponse](../../models/operations/createnoderesponse.md)**
+### Errors
 
+| Error Object                  | Status Code                   | Content Type                  |
+| ----------------------------- | ----------------------------- | ----------------------------- |
+| errors.CreateNodeResponseBody | 400                           | application/json              |
+| errors.SDKError               | 400-600                       | */*                           |
 
 ## get_subtree
 
@@ -118,4 +129,9 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.GetSubtreeResponse](../../models/operations/getsubtreeresponse.md)**
+### Errors
 
+| Error Object                  | Status Code                   | Content Type                  |
+| ----------------------------- | ----------------------------- | ----------------------------- |
+| errors.GetSubtreeResponseBody | 404                           | application/json              |
+| errors.SDKError               | 400-600                       | */*                           |
