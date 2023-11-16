@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import tmp2
 from tmp2.models import operations, shared
