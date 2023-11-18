@@ -15,7 +15,7 @@ req = operations.AddPropertyRequest(
 
 res = s.add_property(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

@@ -7,6 +7,7 @@ src/tmp2/utils/__init__.py
 src/tmp2/utils/retries.py
 src/tmp2/utils/utils.py
 src/tmp2/models/errors/sdkerror.py
+tests/helpers.py
 src/tmp2/models/operations/addproperty.py
 src/tmp2/models/operations/createnode.py
 src/tmp2/models/operations/getsubtree.py
