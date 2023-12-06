@@ -19,7 +19,6 @@ src/tmp2/models/__init__.py
 src/tmp2/models/errors/__init__.py
 src/tmp2/models/operations/__init__.py
 src/tmp2/models/shared/__init__.py
-USAGE.md
 docs/models/operations/addpropertyrequest.md
 docs/models/operations/addpropertyresponsebody.md
 docs/models/operations/addpropertyresponse.md
@@ -34,4 +33,5 @@ docs/models/errors/addpropertyresponsebody.md
 docs/models/errors/createnoderesponsebody.md
 docs/models/errors/getsubtreeresponsebody.md
 docs/sdks/tmp2/README.md
+USAGE.md
 .gitattributes
