@@ -62,7 +62,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | -------------------------------------- | -------------------------------------- | -------------------------------------- |
 | errors.AddPropertyResponseBody         | 400                                    | application/json                       |
 | errors.AddPropertyResponseResponseBody | 404                                    | application/json                       |
-| errors.SDKError                        | 400-600                                | */*                                    |
+| errors.SDKError                        | 4x-5xx                                 | */*                                    |
 
 ### Example
 

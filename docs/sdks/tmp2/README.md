@@ -54,7 +54,7 @@ if res.object is not None:
 | -------------------------------------- | -------------------------------------- | -------------------------------------- |
 | errors.AddPropertyResponseBody         | 400                                    | application/json                       |
 | errors.AddPropertyResponseResponseBody | 404                                    | application/json                       |
-| errors.SDKError                        | 400-600                                | */*                                    |
+| errors.SDKError                        | 4x-5xx                                 | */*                                    |
 
 ## create_node
 
@@ -94,7 +94,7 @@ if res.res is not None:
 | Error Object                  | Status Code                   | Content Type                  |
 | ----------------------------- | ----------------------------- | ----------------------------- |
 | errors.CreateNodeResponseBody | 400                           | application/json              |
-| errors.SDKError               | 400-600                       | */*                           |
+| errors.SDKError               | 4x-5xx                        | */*                           |
 
 ## get_subtree
 
@@ -134,4 +134,4 @@ if res.object is not None:
 | Error Object                  | Status Code                   | Content Type                  |
 | ----------------------------- | ----------------------------- | ----------------------------- |
 | errors.GetSubtreeResponseBody | 404                           | application/json              |
-| errors.SDKError               | 400-600                       | */*                           |
+| errors.SDKError               | 4x-5xx                        | */*                           |
