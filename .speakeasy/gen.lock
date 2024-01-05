@@ -1,0 +1,54 @@
+lockVersion: 2.0.0
+id: 9d0ce0ae-e8f2-462b-95df-039841b2d454
+management:
+  docChecksum: bce9501fb9bf9bd3b9c00981a1513078
+  docVersion: 1.0.0
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 0.7.1
+  configChecksum: d89f23294f7dd174deae9c52835df05a
+  repoURL: https://github.com/speakeasy-sdks/mtp2.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/mtp2.git
+features:
+  python:
+    core: 4.4.0
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - src/tmp2/sdkconfiguration.py
+  - src/tmp2/sdk.py
+  - pylintrc
+  - setup.py
+  - src/tmp2/__init__.py
+  - src/tmp2/utils/__init__.py
+  - src/tmp2/utils/retries.py
+  - src/tmp2/utils/utils.py
+  - src/tmp2/models/errors/sdkerror.py
+  - tests/helpers.py
+  - src/tmp2/models/operations/addproperty.py
+  - src/tmp2/models/operations/createnode.py
+  - src/tmp2/models/operations/getsubtree.py
+  - src/tmp2/models/shared/nodeproperty.py
+  - src/tmp2/models/errors/addproperty.py
+  - src/tmp2/models/errors/createnode.py
+  - src/tmp2/models/errors/getsubtree.py
+  - src/tmp2/models/__init__.py
+  - src/tmp2/models/errors/__init__.py
+  - src/tmp2/models/operations/__init__.py
+  - src/tmp2/models/shared/__init__.py
+  - docs/models/operations/addpropertyrequest.md
+  - docs/models/operations/addpropertyresponsebody.md
+  - docs/models/operations/addpropertyresponse.md
+  - docs/models/operations/createnoderequest.md
+  - docs/models/operations/createnoderesponse.md
+  - docs/models/operations/getsubtreerequest.md
+  - docs/models/operations/getsubtreeresponsebody.md
+  - docs/models/operations/getsubtreeresponse.md
+  - docs/models/shared/nodeproperty.md
+  - docs/models/errors/addpropertyresponseresponsebody.md
+  - docs/models/errors/addpropertyresponsebody.md
+  - docs/models/errors/createnoderesponsebody.md
+  - docs/models/errors/getsubtreeresponsebody.md
+  - docs/sdks/tmp2/README.md
+  - USAGE.md
+  - .gitattributes
