@@ -24,11 +24,11 @@ from tmp2.models import operations, shared
 s = tmp2.Tmp2()
 
 req = operations.AddPropertyRequest(
+    rocket_node_path='string',
     node_property=shared.NodeProperty(
         key='<key>',
         value=7039.04,
     ),
-    rocket_node_path='string',
 )
 
 res = s.add_property(req)

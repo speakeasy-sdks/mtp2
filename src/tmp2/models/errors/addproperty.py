@@ -13,9 +13,9 @@ from typing import Optional
 @dataclasses.dataclass
 class AddPropertyResponseResponseBody(Exception):
     r"""Target node not found."""
-    error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error'), 'exclude': lambda f: f is None }})
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: True }})
     r"""Raw HTTP response; suitable for custom response parsing"""
+    error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error'), 'exclude': lambda f: f is None }})
     
 
     def __str__(self) -> str:
@@ -27,9 +27,9 @@ class AddPropertyResponseResponseBody(Exception):
 @dataclasses.dataclass
 class AddPropertyResponseBody(Exception):
     r"""Invalid request."""
-    error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error'), 'exclude': lambda f: f is None }})
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: True }})
     r"""Raw HTTP response; suitable for custom response parsing"""
+    error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error'), 'exclude': lambda f: f is None }})
     
 
     def __str__(self) -> str:
