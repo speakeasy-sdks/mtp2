@@ -19,16 +19,12 @@ Add property to target node.
 
 ```python
 import tmp2
-from tmp2.models import operations, shared
+from tmp2.models import operations
 
 s = tmp2.Tmp2()
 
 req = operations.AddPropertyRequest(
     rocket_node_path='string',
-    node_property=shared.NodeProperty(
-        key='<key>',
-        value=7039.04,
-    ),
 )
 
 res = s.add_property(req)

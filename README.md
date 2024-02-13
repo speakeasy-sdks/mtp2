@@ -21,16 +21,12 @@ pip install git+https://github.com/speakeasy-sdks/mtp2.git
 
 ```python
 import tmp2
-from tmp2.models import operations, shared
+from tmp2.models import operations
 
 s = tmp2.Tmp2()
 
 req = operations.AddPropertyRequest(
     rocket_node_path='string',
-    node_property=shared.NodeProperty(
-        key='<key>',
-        value=7039.04,
-    ),
 )
 
 res = s.add_property(req)
@@ -68,29 +64,25 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import tmp2
-from tmp2.models import operations, shared
+from tmp2.models import errors, operations
 
 s = tmp2.Tmp2()
 
 req = operations.AddPropertyRequest(
     rocket_node_path='string',
-    node_property=shared.NodeProperty(
-        key='<key>',
-        value=7039.04,
-    ),
 )
 
 res = None
 try:
     res = s.add_property(req)
 except errors.AddPropertyResponseBody as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.AddPropertyResponseResponseBody as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.object is not None:
@@ -116,7 +108,7 @@ You can override the default server globally by passing a server index to the `s
 
 ```python
 import tmp2
-from tmp2.models import operations, shared
+from tmp2.models import operations
 
 s = tmp2.Tmp2(
     server_idx=0,
@@ -124,10 +116,6 @@ s = tmp2.Tmp2(
 
 req = operations.AddPropertyRequest(
     rocket_node_path='string',
-    node_property=shared.NodeProperty(
-        key='<key>',
-        value=7039.04,
-    ),
 )
 
 res = s.add_property(req)
@@ -143,7 +131,7 @@ if res.object is not None:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import tmp2
-from tmp2.models import operations, shared
+from tmp2.models import operations
 
 s = tmp2.Tmp2(
     server_url="http://localhost:8080",
@@ -151,10 +139,6 @@ s = tmp2.Tmp2(
 
 req = operations.AddPropertyRequest(
     rocket_node_path='string',
-    node_property=shared.NodeProperty(
-        key='<key>',
-        value=7039.04,
-    ),
 )
 
 res = s.add_property(req)
