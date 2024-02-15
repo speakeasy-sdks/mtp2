@@ -24,7 +24,7 @@ from tmp2.models import operations
 s = tmp2.Tmp2()
 
 req = operations.AddPropertyRequest(
-    rocket_node_path='string',
+    rocket_node_path='<value>',
 )
 
 res = s.add_property(req)
@@ -65,7 +65,7 @@ from tmp2.models import operations
 s = tmp2.Tmp2()
 
 req = operations.CreateNodeRequest(
-    rocket_node_path='string',
+    rocket_node_path='<value>',
 )
 
 res = s.create_node(req)
@@ -105,7 +105,7 @@ from tmp2.models import operations
 s = tmp2.Tmp2()
 
 req = operations.GetSubtreeRequest(
-    rocket_node_path='string',
+    rocket_node_path='<value>',
 )
 
 res = s.get_subtree(req)
