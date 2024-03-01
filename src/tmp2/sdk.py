@@ -3,6 +3,7 @@
 import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from tmp2 import utils
+from tmp2._hooks import HookContext, SDKHooks
 from tmp2.models import errors, operations
 from typing import Dict, Optional
 
@@ -39,6 +40,16 @@ class Tmp2:
                 server_url = utils.template_url(server_url, url_params)
 
         self.sdk_configuration = SDKConfiguration(client, None, server_url, server_idx, retry_config=retry_config)
+
+        hooks = SDKHooks()
+
+        current_server_url, *_ = self.sdk_configuration.get_server_details()
+        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        if current_server_url != server_url:
+            self.sdk_configuration.server_url = server_url
+
+        # pylint: disable=protected-access
+        self.sdk_configuration._hooks=hooks
        
         
     
@@ -47,19 +58,40 @@ class Tmp2:
     
     def add_property(self, request: operations.AddPropertyRequest) -> operations.AddPropertyResponse:
         r"""Add property to target node."""
+        hook_ctx = HookContext(operation_id='addProperty', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.AddPropertyRequest, base_url, '/{rocketNodePath}', request)
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, operations.AddPropertyRequest, "node_property", False, True, 'json')
-        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.client
         
-        http_res = client.request('PUT', url, data=data, files=form, headers=headers)
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('PUT', url, data=data, files=form, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['400','404','4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
         content_type = http_res.headers.get('Content-Type')
         
         res = operations.AddPropertyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -93,6 +125,7 @@ class Tmp2:
     
     def create_node(self, request: operations.CreateNodeRequest) -> operations.CreateNodeResponse:
         r"""Create node at the specified path."""
+        hook_ctx = HookContext(operation_id='createNode', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.CreateNodeRequest, base_url, '/{rocketNodePath}', request)
@@ -102,7 +135,27 @@ class Tmp2:
         
         client = self.sdk_configuration.client
         
-        http_res = client.request('POST', url, headers=headers)
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('POST', url, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['400','4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
         content_type = http_res.headers.get('Content-Type')
         
         res = operations.CreateNodeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -128,6 +181,7 @@ class Tmp2:
     
     def get_subtree(self, request: operations.GetSubtreeRequest) -> operations.GetSubtreeResponse:
         r"""Return subtree of target node."""
+        hook_ctx = HookContext(operation_id='getSubtree', oauth2_scopes=[], security_source=None)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetSubtreeRequest, base_url, '/{rocketNodePath}', request)
@@ -137,7 +191,27 @@ class Tmp2:
         
         client = self.sdk_configuration.client
         
-        http_res = client.request('GET', url, headers=headers)
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('GET', url, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['404','4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
         content_type = http_res.headers.get('Content-Type')
         
         res = operations.GetSubtreeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

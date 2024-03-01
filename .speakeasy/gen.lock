@@ -4,15 +4,15 @@ management:
   docChecksum: bce9501fb9bf9bd3b9c00981a1513078
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.258.2
-  releaseVersion: 0.9.1
-  configChecksum: ee79fe382cc4e6e76d2da8a92be278e4
+  generationVersion: 2.275.4
+  releaseVersion: 0.10.0
+  configChecksum: 54d08b684fb3c4eabc0d96e467604977
   repoURL: https://github.com/speakeasy-sdks/mtp2.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/mtp2.git
 features:
   python:
-    core: 4.4.6
+    core: 4.5.0
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/tmp2/sdkconfiguration.py
@@ -52,3 +52,6 @@ generatedFiles:
   - docs/sdks/tmp2/README.md
   - USAGE.md
   - .gitattributes
+  - src/tmp2/_hooks/sdkhooks.py
+  - src/tmp2/_hooks/types.py
+  - src/tmp2/_hooks/__init__.py
