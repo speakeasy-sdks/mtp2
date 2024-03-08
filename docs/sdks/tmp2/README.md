@@ -32,6 +32,7 @@ res = s.add_property(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -70,9 +71,10 @@ req = operations.CreateNodeRequest(
 
 res = s.create_node(req)
 
-if res.res is not None:
+if res.string is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -113,6 +115,7 @@ res = s.get_subtree(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
