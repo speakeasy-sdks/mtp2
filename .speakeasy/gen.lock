@@ -3,16 +3,16 @@ id: 9d0ce0ae-e8f2-462b-95df-039841b2d454
 management:
   docChecksum: bce9501fb9bf9bd3b9c00981a1513078
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 0.11.1
-  configChecksum: f3af3290deca15dca0e29b01b44ae214
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 0.11.2
+  configChecksum: 8f0c259fca83392a0903439d662bc3d2
   repoURL: https://github.com/speakeasy-sdks/mtp2.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/mtp2.git
 features:
   python:
-    core: 4.5.1
+    core: 4.5.2
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
 generatedFiles:
